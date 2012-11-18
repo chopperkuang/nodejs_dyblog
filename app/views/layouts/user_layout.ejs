@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><%= title %> - 德佑地产</title>
+    <link type="text/css" rel="stylesheet" href="/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="/css/old_login.css" />
+</head>
+
+<body>
+<div class="container">
+    <div class="line pb_10 clearfix">
+        <a href="#" class="new_logo"></a>
+    </div>
+
+     <%- body %>
+
+</div>
+
+<!--begin: footer-->
+<div class="footer clearFix">&copy;2011 德佑地产 </div>
+
+
+<!--end: footer-->
+<script type="text/javascript" language="javascript">
+    //表单验证
+    function chk_loginForm(){
+        var regD = /^\d+$/;
+        var user = document.getElementById("userID");
+        var password = document.getElementById("password");
+        if(user.value=='' || user.value!=''){
+            alert("请输入用户名");
+            user.focus();
+            return false;
+        }
+        if(password.value==''){
+            alert("请输入密码");
+            password.focus();
+            return false;
+        }
+
+        $('#login').addClass('hideit');
+        $('#loginig').show();
+        $('#errorMsg').hide();
+        return true;
+    }
+</script>
+</body>
+</html>

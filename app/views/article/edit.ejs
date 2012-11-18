@@ -1,0 +1,52 @@
+<div class="mv_10 f16 bold">文章编辑</div>
+<form action="/articles/<%= article.id%>" method="post" id="form_updateArticle" class="form">
+    <input type="hidden" name="_method" value="put">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tableForm formView">
+        <tr>
+            <td width="200" valign="top" class="txtRight">标 题：</td>
+            <td valign="top" class="red st">●</td>
+            <td><input type="text" name='title' class="txtNew w300" value="<%= article.title %>"></td>
+        </tr>
+        <tr>
+            <td valign="top" class="txtRight">内 容：</td>
+            <td valign="top" class="red st">●</td>
+            <td><textarea class=" bd_ccc" name='content' rows="10" cols="80" style="border-radius:3px" id="boxContent"><%= article.content%></textarea></td>
+        </tr>
+        <tr>
+            <td valign="top" class="txtRight">类 别：</td>
+            <td valign="top" class="red st">●</td>
+            <td>
+                <select name='categoryName'>
+                    <% categories.forEach(function(category) { %>
+                        <option value="<%= category.name%>" <%if (category.name == article.categoryName) {%> selected<%}%>><%= category.name%></option>
+                    <% }) %>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td valign="top" class="txtRight"></td>
+            <td valign="top" class="red st"></td>
+            <td>
+                <% if (typeof errors !== 'undefined') { %>
+                    添加失败～
+                <%}%>
+            </td>
+        </tr>
+    </table>
+</form>
+<div class="right">
+    <a href="article_list.html" class="btnOpH34 h34Silver opH34 in_block mr_20">取消</a>
+    <a href="#" class="btnOpH34 h34Blue opH34 in_block" id="artCommit">提交</a>
+</div>
+
+<script type="text/javascript">
+$(function(){
+
+	$('#artCommit').click(function(){
+        $('#form_updateArticle').submit();
+        return false
+	});
+});
+
+</script>

@@ -1,0 +1,10 @@
+.loginBox {width:310px; margin:100px auto}
+.corner {width:5px; height:29px; background:#637083 url(../images/icons_login.gif) no-repeat left top; float:left}
+.btm {width:4px; height:6px}
+.tr {background-position:-7px top}
+.bl {background-position:-14px top}
+.br {background-position:-20px top}
+.btmC {width:302px; height:6px; background:#E7EEF8; float:left; font-size:1px; line-height:1px}
+.loginBox h1{width:284px; background:#637083; font-size:12px; color:#FFF; padding:7px 8px; *padding-bottom:8px; float:left}
+.loginBox .con {background:#E7EEF8; color:#333; line-height:150%; padding:20px 20px 20px 65px;}
+.btn_login {width:52px; height:22px; background:#637083 url(../images/icons_login.gif) no-repeat -26px top; border:0; cursor:pointer}

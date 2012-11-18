@@ -1,0 +1,61 @@
+<div class="left">
+	<h2 class="mt_15 f14"></h2>
+    <div class="navLeft mv_10">
+        <a href="/" <%if(req.query.cateName == undefined) {%>class="current"<%}%>>全部类别</a>
+        <% categories.forEach(function(category) { %>
+			<a href="/?cateName=<%= category.name %>" <%if(req.query.cateName == category.name) {%>class="current"<%}%>><%= category.name %></a>
+		<% }) %>
+    </div>
+    <a href="#" class="ml_5 btnOpH24 h24Silver in_block mr_10 mt_10" id="publish"> + 我要发表</a><a href="#" class="mt_10 btnOpH24 h24Silver in_block " id="add_category_btn"> + 添加类别</a>
+</div>
+
+
+<!--begin: popup layer - add new article start -->
+<div class="popLayer w650" id="layer_new_category">
+	<div class="popTitle clearfix">
+		<h1>添加类别</h1>
+		<div class="cls"><a href="#" class="xx" id="category_close"></a></div>
+	</div>
+	<div class="popCon">
+    	<form method="post" id="form_newArticle" class="form">
+			<table width="560" border="0" cellpadding="0" cellspacing="0" class="tableForm formView">
+            	<tr>
+                	<td valign="top">标 题：</td>
+                	<td valign="top" class="red st">●</td>
+                    <td><input type="text" name='category_name' class="txtNew w150" value=""></td>
+                </tr>
+			</table>
+        </form>
+	</div>
+	<div class="popBtn"><span class='red mr_20' id='error_message'></span><a href="#this" class="btnOpH24 h24Silver in_block" id="category_cancel">取消</a><a href="#this" class="btnOpH24 h24Blue in_block ml_5" id="category_submit">确定</a></div>
+</div>
+<!--end: popup layer - add new article start -->
+
+<script type="text/javascript">
+$(function(){
+    $('#add_category_btn').click(function(){
+        showPopupDiv($('#layer_new_category'));
+        return false
+    })
+
+    $('#category_submit').live('click', function(){
+        $('#error_message').text('');
+        ajaxPost({
+            url: '/categories',
+            data: {name:$.trim($('input:text[name=category_name]').val())},
+            ok : function(data){
+                window.location.href = '/articles';
+            },
+            fail: function(data){
+                 $('#error_message').text(data.message);
+            }
+        });
+        return false;
+    });
+
+    $('#category_close, #category_cancel').live('click', function(){
+        hidePopupDiv($('#layer_new_category'));
+        return false
+    })
+});
+</script>

@@ -1,0 +1,22 @@
+{
+    "name":"dyblog",
+    "version":"0.0.1",
+    "private":true,
+    "scripts":{
+        "start":"nodemon server.js"
+    },
+    "dependencies":{
+        "express":"latest",
+        "express-namespace":"latest",
+        "ejs":"latest",
+        "mongoose":"latest",
+        "connect-mongodb":"latest",
+        "async":"latest",
+        "nodemon":"latest",
+        "passport":"latest",
+        "passport-local":"latest",
+        "express-mongoose":"latest",
+        "moment": "latest",
+        "underscore": "latest"
+    }
+}

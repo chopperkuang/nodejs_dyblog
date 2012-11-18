@@ -1,0 +1,30 @@
+.headerWrap {width:100%; height:42px; text-align:center; background:#7a2020 url(../images/bg_header.png) repeat-x left top; -moz-box-shadow:0 1px 5px -1px rgba(0, 0, 0, 0.7); -webkit-box-shadow:0 1px 5px -1px rgba(0, 0, 0, 0.7); box-shadow:0 1px 5px -1px rgba(0, 0, 0, 0.7); filter:progid:DXImageTransform.Microsoft.Shadow(color='666666', Direction=180, Strength=2)}
+.header {width:960px; height:42px; margin:0 auto}
+.logo_mini {width:67px; height:42px; background:url(../images/bg_logo_mini.png) no-repeat left top}
+
+.pageTitle {width:96px; height:40px; background:url(../images/pageTitle.png) no-repeat left top}
+.ptHelp {background-position:left top}
+
+.searchBoxTop {width:280px; height:27px; line-height:27px; padding-left:12px; border:none; background:#fff; -moz-border-radius:5px 0 0 5px; -webkit-border-radius:5px 0 0 5px; border-radius:5px 0 0 5px}
+.searchBtnTop {width:38px; height:27px; padding:0 5px 0 6px; border:none; cursor:pointer; background:#fff url(../images/bg_searchBtnTop.png) no-repeat 5px top; -moz-border-radius:0 5px 5px 0; -webkit-border-radius:0 5px 5px 0; border-radius:0 5px 5px 0}
+
+a.siteSwitch, a.siteSwitch:hover {width:101px; height:26px; line-height:26px; background:url(../images/bg_siteSwitch.gif) no-repeat left top}
+a.userCenter{background-position:left -26px}
+
+.siteSwitchPop {width:110px; position:absolute; z-index:999; border:1px solid #999; background:#fff; font-size:14px; display:none}
+.siteSwitchPop a, .siteSwitchPop a:hover{width:90px; overflow:hidden; height:30px; line-height:30px; color:#333; font-weight:bold; text-decoration:none; display:block; padding:0 10px}
+.siteSwitchPop span{width:90px; overflow:hidden; height:29px; line-height:29px; color:#999; border-bottom:1px solid #ddd; display:block; padding:0 10px}
+
+.menuNav {float:left}
+.menuNav a{height:40px; line-height:40px; padding:0 15px; color:#fff; font-weight:bold; text-decoration:none; display:block; float:left; font-size:14px; padding-top:2px}
+.menuNav a.more {background:url(../images/bg_menuNav_more.gif) no-repeat right 19px; padding-right:25px}
+.menuNav a:hover{background-color:#640808; text-decoration:none}
+.menuNav a.current{background-color:#550808}
+
+a.siteMsg, a.siteMsg:hover {height:20px; line-height:20px; background:url(../images/bg_siteMsg.png) no-repeat left -30px; padding:0 12px; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px; display:block; color:#fff; text-decoration:none}
+a.user, a.user:hover {height:20px; line-height:20px; background:url(../images/bg_menuNav_more.gif) no-repeat right 7px; padding-right:22px; color:#fff; text-decoration:none; display:block}
+a.siteMsg:focus {outline:none}
+
+.msgList {width:488px; height:200px; overflow-y:auto}
+.msgList li{padding:10px; border-bottom:1px solid #ddd; line-height:130%}
+.msgList li.new{border-left:6px solid #c70708}

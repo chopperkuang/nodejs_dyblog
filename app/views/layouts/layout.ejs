@@ -1,0 +1,118 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<link type="text/css" rel="stylesheet" href="/css/main.css">
+<link type="text/css" rel="stylesheet" href="/css/headerNew.css">
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/fns.js"></script>
+<script type="text/javascript" src="/js/formValidateNew.js"></script>
+<script type="text/javascript" src="/js/jquery-jtemplates.js"></script>
+<script type="text/javascript" src="/js/portal.js"></script>
+<title><%= title %>-德佑地产</title>
+</head>
+
+<body>
+<div class="headerWrap">
+	<div class="header clearfix">
+		<span class="left">
+			<a href="/" class="logo_mini left"></a>
+        </span>
+        <span class="ml_10 in_block f24 mr_20 mt_5 left" style="color:#FFF;font-family:'微软雅黑'">快速入手</span>
+        <input type="text" class="searchBoxTop left ml_5 mt_8 grey999" value="输入问题关键词，如：产品线、技术分享等…" onfocus="clearTxtMsg($(this),'输入问题关键词，如：产品线、技术分享等…', 'grey999')" ondrop="clearTxtMsg($(this),'输入问题关键词，如：产品线、技术分享等…', 'grey999')" onblur="showTxtMsg($(this),'输入问题关键词，如：产品线、技术分享等…', 'grey999')">
+        <input type="button" class="searchBtnTop left mt_8" value="">
+		<span class="right mt_10 pt_5">
+
+			<% if(req.user) { %>
+			    <a href="#" class="white ">欢迎，<%=req.user.name%></a>
+                <a href="/logout" class="white ml_10">退出</a>
+			<% } else {%>
+			    <a href="/login" class="white mr_10">登录</a><a href="/signup" class="white ">注册</a>
+			<%}%>
+
+		</span>
+	</div>
+</div>
+<div class="container clearfix">
+	<%- body %>
+</div>
+<!--begin: footer-->
+<div class="footer clearFix">©2011 德佑地产 </div>
+<!--end: footer-->
+<!--begin: popup layer - add new article start -->
+<div class="popLayer w650" id="layer_newarticle">
+	<div class="popTitle clearfix">
+		<h1>我要发表</h1>
+		<div class="cls"><a href="#" class="xx" id="publishClose"></a></div>
+	</div>
+	<div class="popCon">
+    	<form method="post" id="form_newArticle" class="form">
+			<table width="560" border="0" cellpadding="0" cellspacing="0" class="tableForm formView">
+            	<tr>
+                	<td valign="top">标 题：</td>
+                	<td valign="top" class="red st">●</td>
+                    <td><input type="text" name='article.title' class="txtNew w150" value=""></td>
+                </tr>
+				<tr>
+					<td valign="top">内 容：</td>
+					<td valign="top" class="red st">●</td>
+					<td><textarea class="tA" name='article.contents' style="border-radius:3px" id="boxContent"></textarea></td>
+				</tr>
+            	<tr>
+                	<td valign="top">类 别：</td>
+                	<td valign="top" class="red st">●</td>
+                    <td>
+                    	<select name='article.category'>
+                    	    <% categories.forEach(function(category) { %>
+                        	    <option value="<%= category.name%>"><%= category.name%></option>
+                            <% }) %>
+                    	</select>
+                    </td>
+                </tr>
+			</table>
+        </form>
+	</div>
+	<div class="popBtn"><a href="#this" class="btnOpH24 h24Silver in_block" id="publishCancel">取消</a><a href="#this" class="btnOpH24 h24Blue in_block ml_5" id="publishOk">确定</a></div>
+</div>
+<!--end: popup layer - add new article start -->
+<script type="text/javascript">
+$(function(){
+//我要发布
+    $('#publish').click(function(){
+        showPopupDiv($('#layer_newarticle'));
+        return false
+    })
+//弹层内表单验证
+var arrElement = [
+	["article.title", "text", [["$.trim($('input:text[name=article.title]').val()) == ''", "请输入标题"]]],//单价
+	["article.contents", "text", [["$.trim($('[name=article.contents]').val()) == ''", "请输入内容"]]],
+	["article.category", "select", [["$.trim($('select[name=article.category]').val()) == '请选择'", "请选择类别"]]]
+]
+//text
+//弹层内确认
+$('#publishOk').live('click', function(){
+    ajaxPost({
+        url: '/articles',
+        data: {title:$.trim($('input:text[name=article.title]').val()), content:$.trim($('[name=article.contents]').val()), categoryName:$.trim($('select[name=article.category]').val())},
+        ok : function(data){
+            window.location.href = '/articles/' + data.article._id;
+        },
+        fail: function(data){
+             alert(data.message);
+        }
+    });
+    hidePopupDiv($('#layer_newarticle'));
+
+	return false
+});
+//弹层内X、取消
+$('#publishClose, #publishCancel').live('click', function(){
+	hidePopupDiv($('#layer_newarticle'));
+
+	return false
+	})
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<% include categories %>
+<div class="contentRight">
+    <h2 class="mt_15 f14">文章列表</h2>
+    <div class="navTab2th mt_15 clearfix">
+        <a href="#" class="current">最新的<span class="num numRed"><%=articles.length%></span></a>
+        <a href="#">最受欢迎的</a>
+        <a href="#">我的文章</a>
+    </div>
+    <table width="100%" cellspacing="0" class="tableListNew mt_10">
+        <tr class="trHead">
+            <td width="380">标题</td>
+            <td width="100">作者</td>
+            <td width="100">类别</td>
+            <td width="80">创建时间</td>
+            <td width="80">更新时间</td>
+        </tr>
+        <% articles.forEach(function(article){ %>
+            <tr>
+                <td><a href="/articles/<%=article.id%>"><%=article.title%></a></td>
+                <td><%=article.user.name%></td>
+                <td><%=article.categoryName%></td>
+                <td><%=formatDate(article.createdAt)%></td>
+                <td>-</td>
+            </tr>
+        <%})%>
+    </table>
+    <div class="pageNew txtRight mt_10">
+        <a href="#" class="in_block btn prev"></a>
+        <a href="#" class="in_block">1</a>
+        <b class="in_block">2</b>
+        <a href="#" class="in_block">3</a>
+        <a href="#" class="in_block">4</a>
+        <a href="#" class="in_block">5</a>
+        <a href="#" class="in_block">6</a>
+        <span class="in_block more"></span>
+        <a href="#" class="in_block btn next"></a>
+    </div>
+</div>

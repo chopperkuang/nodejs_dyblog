@@ -1,0 +1,899 @@
+html {filter:expression(document.execCommand("BackgroundImageCache", false, true)); overflow-y:scroll}
+body {margin:0; padding:0; font-size:12px; font-family:Arial,宋体}
+
+form,ul,h1,h2,h3,input,p {margin:0; padding:0; font-family:Arial,宋体}
+ul {list-style-type:none}
+img {border:0}
+p .s {margin:0 10px; color:#CCC}
+p.normal {margin:0; padding:0}
+.hand {cursor:pointer}
+
+input, textarea, select:focus {outline:none}
+textarea {resize:none}
+input[type=radio], input[type=checkbox]{margin-right:5px; *margin-right:0}
+
+
+/**************
+  layout
+***************/
+.left {float:left}
+.right {float:right}
+
+.in_block {display:-moz-inline-stack; vertical-align:top; display:inline-block; zoom:1; *display:inline}
+.clear {clear:both; font-size:0; height:0; line-height:0; margin:0; padding:0}
+.clearFix {clear:both}
+.clearfix:after {clear:both; content:' '; display:block; font-size:0; line-height:0; visibility:hidden; width:0; height:0}
+* html .clearfix {zoom:1}/* IE6 */
+*:first-child+html .clearfix {zoom:1}/* IE7 */
+
+.flip-horizontal {
+	-moz-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1); 
+	-o-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: fliph; /*IE*/ }
+.flip-vertical {
+	-moz-transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+	transform: scaleY(-1);
+	filter: flipv; /*IE*/ }
+
+.pos_r {position:relative}
+.pos_a {position:absolute}
+
+
+/**************
+  alignment
+***************/
+.center {text-align:center}
+.txtRight {text-align:right}
+.txtLeft {text-align:left}
+.wBreak {
+	word-break: break-word; /* 文本行的任意字内断开 */ 
+	word-wrap: break-word; /* IE */ 
+	white-space: -moz-pre-wrap; /* Mozilla */ 
+	white-space: -hp-pre-wrap; /* HP printers */ 
+	white-space: -o-pre-wrap; /* Opera 7 */ 
+	white-space: -pre-wrap; /* Opera 4-6 */ 
+	white-space: pre; /* CSS2 */ 
+	white-space: pre-wrap; /* CSS 2.1 */ 
+	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */ 
+}
+
+
+/******************
+  line height
+*******************/
+.lineH150 {line-height:150%}
+.lineH180 {line-height:180%}
+.lineH200 {line-height:200%}
+.lineH220 {line-height:220%}
+
+
+/*****************
+  display
+******************/
+.hideit{display:none}
+.hidden {visibility:hidden}
+
+
+/*****************
+  Hyperlinks
+******************/
+a{color:#1769E6; text-decoration:none}
+a:hover{color:#1769E6; text-decoration:underline}
+a.lightBlue {color:#79a8fe; text-decoration:none}
+a.lightBlue:hover {color:#79a8fe; text-decoration:underline}
+a.white{color:#FFF; font-size:12px; text-decoration:none}
+a.white:hover{color:#FFF; font-size:12px; text-decoration:underline}
+a.red{color:#CE4A3C; font-size:12px; text-decoration:none}
+a.red:hover{color:#CE4A3C; font-size:12px; text-decoration:underline}
+a.grey{color:#888; font-size:12px; text-decoration:none}
+a.grey:hover{color:#888; font-size:12px; text-decoration:underline}
+a.greyLine{color:#888; font-size:12px; text-decoration:underline}
+a.greyLine:hover{color:#888; font-size:12px; text-decoration:none}
+a.under_line{text-decoration:underline}
+a.pink {color:#ffa29a; text-decoration:none}
+a.pink:hover {color:#ffa29a; text-decoration:underline}
+
+a.btnAddGreen, a.btnAddGreen:hover {width:55px; height:18px; height:15px\9; padding:2px 0 0 25px; padding-top:5px\9; cursor:pointer; background:url(../images/sprites_main.gif) no-repeat 0 -121px;color:#333}
+a.btnGrey2W, a.btnGrey2W:hover {width:35px; height:17px; padding:1px 0 1px 0; height:15px\9; padding:2px 0 2px 0\9; *padding:3px 0 1px 0; text-align:center; cursor:pointer; background:url(../images/sprites_main.gif) no-repeat 0 -160px; color:#333; text-decoration:none}
+
+a.btnGrey2W, a.btnGrey2W:hover {width:35px; height:17px; padding:1px 0 1px 0; height:15px\9; padding:2px 0 2px 0\9; *padding:3px 0 1px 0; text-align:center; cursor:pointer; background:url(../images/sprites_main.gif) no-repeat 0 -160px; color:#333; text-decoration:none}
+a.getMoreInfo, a.getMoreInfo:hover {width:73px; height:14px; color:#333; text-align:center; padding:4px 0 6px; padding:6px 0 4px\9; background:url(../images/sprites_main.gif) no-repeat -100px -240px; text-decoration:none}
+
+a.help, .help {background:url(../images/sprites_main.gif) no-repeat -250px -276px; *background-position:-250px -278px; padding:2px 0 0 18px; margin-left:8px; cursor:pointer}
+
+a.help_new_noC {background:url(../images/help_new.gif) no-repeat left top; width:15px; height:15px}
+a.help_new {background:url(../images/help_new.gif) no-repeat left top; *background-position:left 1px; padding-left:20px}
+
+a.help_new_noC2 {background:url(../images/help_new2.gif) no-repeat left top; width:12px; height:12px}
+a.help_new2 {background:url(../images/help_new2.gif) no-repeat left top; padding-left:16px}
+
+a.blackNoLine, a.blackNoLine:hover {color:#333; text-decoration:none;}
+.autoWLinkBtn_greyH21 {padding-left:10px; background:url(../images/autoWBtn_greyH21.gif) no-repeat left top; height:21px; overflow:hidden; cursor:pointer}
+.autoWLinkBtn_greyH21 .inner{height:21px; line-height:21px; padding-right:10px; padding-top:2px\9; height:19px\9; background:url(../images/autoWBtn_greyH21.gif) no-repeat right top; overflow:hidden; font-family:Arial,宋体}
+
+a.export_excel {height:16px; line-height:16px; background:url(../images/icon_excel.gif) no-repeat left top; padding:2px 0 0 20px}
+a.import_excel {height:18px; line-height:18px; background:url(../images/icon_excel.gif) no-repeat left -30px; padding:2px 0 0 22px}
+a.print_public {height:16px; line-height:16px; background:url(../images/icon_print.gif) no-repeat left 1px; padding:2px 0 0 22px}
+
+
+/*******************
+  text, textarea
+********************/  
+.txt  {width:95px; height:19px; border:1px solid #999; height:16px\9; padding-top:3px\9; padding-left:3px; background:#FFF; color:#333; font-size:12px}
+.text {width:78px; height:19px; border:1px solid #999; height:16px\9; padding-top:3px\9; padding-left:3px; background:#FFF; color:#333; font-size:12px}
+.tA  {width:448px; border:1px solid #999; height:60px; padding-left:3px; font-size:12px}
+.txtNew {width:92px; height:22px; line-height:22px; background:#fff; border:1px solid #bbb; -moz-box-shadow:0 1px 2px #ccc inset; -webkit-box-shadow:0 1px 2px #ccc inset; box-shadow:0 1px 2px #ccc inset; font-size:12px; padding:0 3px}
+.txtMini {width:46px; height:14px; line-height:14px; padding:0 2px}
+
+.tDate {width:68px; height:19px; _height:17px; _padding-top:2px; padding-left:3px; border:1px solid #999; color:#333; background:#FFF url(../images/sprites_main.gif) no-repeat 55px -279px; cursor:pointer}
+.txtDate {width:64px; height:22px; line-height:22px; background:#fff url(../images/bg_tdate.png) no-repeat 52px 4px; border:1px solid #bbb; -moz-box-shadow:0 2px 3px #ddd inset; -webkit-box-shadow:0 2px 3px #ddd inset; box-shadow:0 2px 3px #ddd inset; font-size:12px; padding:0 3px 0 3px; cursor:pointer}
+
+.asTxt {border:none; padding-left:0; background:transparent; -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none}
+.asSelect {width:120px; height:14px; border:1px solid #ABABAB; color:#333; padding:3px 5px 1px 5px; font-size:12px; background:#F9F9F9 url(../images/bg_selectRight.gif) no-repeat right top; cursor:pointer}
+.asSelectPop {width:130px; border:1px solid #B3B3B3; border-top:0; position:absolute; left:0; top:0; z-index:999; display:none}
+.asSelectPop a{color:black; width:106px; height:14px; padding:5px 12px; display:block; background:#FFF; text-decoration:none}
+.asSelectPop a:hover, .asSelectPop a.current{color:black; background:#E0EBFC; text-decoration:none}
+.asSelectPop a.indent {width:82px; padding-left:36px}
+.asSelectPop .notOptional {color:#888; width:106px; height:14px; padding:5px 12px; display:block; background:#FFF; text-decoration:none}
+.inputSel {height:22px; line-height:22px; padding:0 28px 0 8px; border:none; cursor:pointer; background:url(../images/bg_inputSel.gif) no-repeat right top; border-left:1px solid #BBB; font-size:12px}
+.selInput, a.selInput, a.selInput:hover {height:22px; line-height:22px; border:1px solid #c5c5c5; border-bottom:1px solid #a5a5a5; background:url(../images/bg_inputSel.png) no-repeat right top; padding:0 24px 0 5px; font-size:12px; color:#333; -moz-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); -webkit-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); 0 1px 5px -2px rgba(0, 0, 0, 0.3); -webkit-border-radius:3px; border-radius:3px; cursor:pointer; text-decoration:none}
+
+.w150 {width:142px}
+.w200 {width:192px}
+.w300 {width:292px}
+.w500 {width:498px}
+
+.tt160 {width:158px}
+.tt280 {width:278px}
+.tt450 {width:448px}
+.t35 {width:30px}
+.t50 {width:45px}
+.tt50 {width:50px}
+.t75 {width:70px}
+.t100 {width:95px}
+.t150 {width:145px}
+.t250 {width:245px}
+.t300{width:300px}
+.h13 {height:13px}
+/*.tA {padding:5px 3px; border:1px solid #bbb; -moz-box-shadow:0 2px 3px #ddd inset; -webkit-box-shadow:0 2px 3px #ddd inset; box-shadow:0 2px 3px #ddd inset}*/
+
+
+/*****************
+  font
+******************/
+.bold {font-weight:bold}
+.noBold {font-weight:normal}
+
+.grey999 {color:#888}
+.grey666 {color:#666}
+.grey333 {color:#333}
+.red {color:#CE4A3C}
+.green {color:#51b203}
+.org {color:#DE6A56}
+.orgF90 {color:#F90}
+.blue {color:#2d8cf8}
+
+.brown   {color:#BF902C}
+.orange {color:#E8B487}
+.black {color:#000}
+
+.f12 {font-size:12px}
+.f14 {font-size:14px}
+.f16 {font-size:16px}
+.f18 {font-size:18px}
+.f22 {font-size:22px}
+.f24 {font-size:24px}
+
+/******************
+opacity
+*******************/
+.opacity50 {opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50)}
+
+
+/***********************
+status & features block
+************************/
+.feature {height:20px; line-height:20px; border-radius:2px; -moz-border-radius:2px; -webkit-border-radius:2px; padding:0 6px; color:#fff}
+.f_bg_org {background-color:#ef8d01}
+.f_bg_red {background-color:#d00c02}
+.f_bg_green {background-color:#5ea206}
+.f_bg_grey {background-color:#666}
+.f_border_green {background-color:#fff; border:1px solid #5ea206; height:18px; line-height:18px; padding:0 5px;color:#75a529}
+.f_border_grey {background-color:#fff; border:1px solid #666; height:18px; line-height:18px; padding:0 5px; color:#333}
+
+
+/******************
+navigation
+*******************/
+/* nav left */
+.navLeft {width:200px; border-top:1px solid #d5d5d5\0; *border-top:1px solid #d5d5d5}
+.navLeft a{width:174px; height:34px; line-height:34px; padding:0 12px; background:url(../images/bg_navLeft.png) no-repeat left top; text-decoration:none; color:#666; border:1px solid #d5d5d5; border-top:none; display:block}
+.navLeft a:hover{background-position:left -34px; color:#666; text-decoration:none}
+
+.navLeft a:first-of-type {border-top:1px solid #d5d5d5; -moz-border-top-left-radius:5px; -moz-border-top-right-radius:5px; -webkit-border-top-left-radius:5px; -webkit-border-top-right-radius:5px; border-top-left-radius:5px; border-top-right-radius:5px}
+.navLeft a.current,
+.navLeft a.current:hover{width:176px; border:none; background-position:left -68px; color:#fff; font-weight:bold}
+.navLeft a:last-of-type{-moz-border-bottom-left-radius:5px; -moz-border-bottom-right-radius:5px; -webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px; border-bottom-left-radius:5px; border-bottom-right-radius:5px}
+
+/* nav 1th */
+.navTab1th {height:36px; background:url(../images/bg_nav1th.png) repeat-x left top; margin:15px 0; -moz-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; border-left:1px solid #d2d2d2}
+.navTab1th td{border-right:1px solid #d2d2d2}
+.navTab1th td:first-of-type{border-right:1px solid #d2d2d2; -moz-border-radius:5px 0 0 5px; -webkit-border-radius:5px 0 0 5px; border-radius:5px 0 0 5px}
+.navTab1th td:last-of-type{border-right:1px solid #d2d2d2; -moz-border-radius:0 5px 5px 0; -webkit-border-radius:0 5px 5px 0; border-radius:0 5px 5px 0}
+.navTab1th a,
+.navTab1th a:hover{width:100%; height:36px; line-height:36px; text-align:center; color:#888; display:block; text-decoration:none}
+.navTab1th td.current{background:url(../images/bg_nav1th.png) repeat-x left -36px}
+.navTab1th td.current a{color:#fff; font-weight:bold}
+
+/* nav 2th */
+.navTab2th {height:29px; border-bottom:1px solid #d5d5d5; margin-top:15px}
+.navTab2th a{height:28px; line-height:28px; padding:0 20px; float:left; margin-right:3px; display:block; text-decoration:none; position:relative; top:1px}
+.navTab2th a:hover{background-color:#eee; -moz-border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; border-radius:5px 5px 0 0}
+.navTab2th a.current, 
+.navTab2th a.current:hover{height:27px; line-height:27px; padding:0 20px; color:#000; background-color:#fff; font-weight:bold; border:1px solid #d5d5d5; border-bottom:1px solid #fff; -moz-border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; border-radius:5px 5px 0 0; text-decoration:none}
+.navTab2th span.op{float:right}
+
+/* nav 3th */
+.navTab3th {}
+.navTab3th a{height:24px; line-height:24px; padding:0 14px; display:block; float:left; text-decoration:none; margin-right:3px}
+.navTab3th a:hover{background-color:#eee; text-decoration:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px}
+
+span.num{height:12px; line-height:12px; background:#888; color:#fff; padding:0 4px; display:inline; margin-left:3px; font-weight:bold; text-decoration:none; -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px}
+span.numRed{background:#d95a5a}
+
+.navTab3th a.current,
+.navTab3th a.current:hover{background:#707070; font-weight:bold; color:#fff; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; text-decoration:none}
+
+.navTab1th td.current a  span.num,
+.navTab1th td.current a:hover  span.num,
+.navTab3th a.current span.num,
+.navTab3th a.current:hover span.num{background:#fff; color:#333}
+
+/******************* 
+  button
+********************/
+.btnForm {width:60px; height:24px; border:0; cursor:pointer; background:url(../images/sprites_main.gif) no-repeat left top; color:#fff; font-size:12px; padding:3px 0 5px; padding:5px 0 3px\9}
+.fBlue60 {}
+.fBlue100 {width:100px; background-position:-100px 0}
+.fRed60 {background-position:0 -40px}
+.fRed100 {width:100px; background-position:-100px -40px}
+.fGray60 {background-position:0 -80px}
+.fGray100 {width:100px; background-position:-100px -80px}
+
+.btnOp {width:35px; height:18px; border:0; cursor:pointer; background:url(../images/sprites_main.gif) no-repeat left top; color:#333; font-size:12px; padding-bottom:2px; padding-top:3px\9}
+ {background-position:0 -160px}
+a.btnOp, a.btnOp:hover {width:35px; height:18px; line-height:18px; background:url(../images/sprites_main.gif) no-repeat left top; color:#333; text-align:center; padding:0; marign:0; text-decoration:none; height:16px\9; line-height:16px\9; padding-top:2px\9}
+.op2w, a.op2w, a.op2w:hover {background-position:0 -160px}
+.op4w, a.op4w, a.op4w:hover {width:60px; background-position:0 -200px}
+.op6w, a.op6w, a.op6w:hover {width:90px; background-position:-100px -200px}
+.op8w, a.op8w, a.op8w:hover {width:125px; background-position:-100px -160px}
+
+.btnOpm {width:45px; height:24px; border:0; cursor:pointer; background:url(../images/sprites_btns.gif) no-repeat left top; color:#0F0F0F; font-size:12px; padding-bottom:2px; padding-top:5px\9}
+a.btnOpm, a.btnOpm:hover {width:45px; height:24px; line-height:24px; background:url(../images/sprites_btns.gif) no-repeat left top; color:#0F0F0F; text-align:center; padding:0; marign:0; text-decoration:none; height:22px\9; line-height:22px\9; padding-top:2px\9}
+.opm2w, a.opm2w, a.opm2w:hover {}
+.opm4w, a.opm4w, a.opm4w:hover {width:65px; background-position:-50px 0}
+.opm6w, a.opm6w, a.opm6w:hover {width:90px; background-position:0 -30px}
+.opm8w, a.opm8w, a.opm8w:hover {width:125px; background-position:0 -60px}
+
+.btnOpH {width:35px; height:18px; border:0; cursor:pointer; background:url(../images/btns_opH.gif) no-repeat left top; color:#333; font-size:12px; padding-bottom:2px; padding-top:3px\9}
+ {background-position:0 -160px}
+a.btnOpH, a.btnOpH:hover {width:35px; height:18px; line-height:18px; background:url(../images/btns_opH.gif) no-repeat left top; color:#333; text-align:center; padding:0; marign:0; text-decoration:none; height:16px\9; line-height:16px\9; padding-top:2px\9}
+.opH2w, a.opH2w, a.opH2w:hover {background-position:left top}
+.opH4w, a.opH4w, a.opH4w:hover {width:60px; background-position:left -40px}
+.opH6w, a.opH6w, a.opH6w:hover {width:90px; background-position:-89px -40px}
+.opH8w, a.opH8w, a.opH8w:hover {width:125px; background-position:-54px top}
+
+.btnAddG {width:80px; height:22px; border:0; cursor:pointer; background:url(../images/sprites_main.gif) no-repeat left top; color:#333; text-align:left; font-size:12px; padding:0 0 2px 24px; padding:2px 0 0 24px\9}
+a.btnAddG, a.btnAddG:hover {width:56px; height:22px; line-height:22px; background:url(../images/sprites_main.gif) no-repeat left top; color:#333; text-align:left; padding:0; marign:0; text-decoration:none; padding-left:24px; height:20px\9; line-height:20px\9; padding-top:2px\9}
+.add4w, a.add4w, a.add4w:hover {background-position:0 -120px}
+.add6w, a.add6w, a.add6w:hover {width:105px; background-position:-100px -120px}
+a.add6w, a.add6w:hover {width:81px}
+
+.btnUploadG {width:80px; height:22px; border:0; cursor:pointer; background:url(../images/sprites_btns.gif) no-repeat left top; color:#333; text-align:left; font-size:12px; padding:0 0 2px 24px; padding:2px 0 0 24px\9}
+a.btnUploadG, a.btnUploadG:hover {width:56px; height:22px; line-height:22px; background:url(../images/sprites_btns.gif) no-repeat left top; color:#333; text-align:left; padding:0; marign:0; text-decoration:none; padding-left:24px; height:18px\9; line-height:18px\9; padding-top:2px\9}
+.upload4w, a.upload4w, a.upload4w:hover {background-position:0 -170px}
+.upload6w, a.upload6w, a.upload6w:hover {width:105px; background-position:0 -200px}
+a.upload6w, a.upload6w:hover {width:81px}
+
+.btnRed, a.btnRed, a.btnRed:hover {color:#CE4A3C}
+.btnBlue, a.btnBlue, a.btnBlue:hover {color:#1769E6}
+.btnGrey, a.btnGrey, a.btnGrey:hover {color:#666}
+
+.btnTreat {width:112px; height:35px; border:none; cursor:pointer; font-weight:bold; font-size:14px; background:url(../images/sprites_btns.gif) no-repeat left top}
+a.btnTreat, a.btnTreat:hover {width:112px; height:35px; line-height:35px; font-weight:bold; font-size:14px; background:url(../images/sprites_btns.gif) no-repeat left top;; text-align:center; padding:0; marign:0; text-decoration:none}
+.tGreen, a.tGreen, a.tGreen:hover {background-position:left -90px; color:#fff}
+.tSilver, a.tSilver, a.tSilver:hover {background-position:left -130px; color:#000}
+
+a.btnOp_greenH22 {height:22px; line-height:22px; background:url(../images/btn_op_green.gif) no-repeat left top; padding-left:13px; text-decoration:none}
+a.btnOp_greenH22:hover {background-position:left -23px; text-decoration:none}
+a.btnOp_greenH22 .inner {height:22px; line-height:22px; padding-top:3px\9; height:19px\9; line-height:19px\9; background:url(../images/btn_op_green.gif) no-repeat right top; padding-right:13px; color:#fff; font-weight:bold; cursor:pointer}
+a.btnOp_greenH22:hover .inner {background-position:right -23px}
+
+a.btnOp_greenH32 {height:32px; line-height:32px; background:url(../images/btn_op_green.gif) no-repeat left -50px; padding-left:25px; text-decoration:none}
+a.btnOp_greenH32:hover {background-position:left -82px; text-decoration:none}
+a.btnOp_greenH32 .inner {height:32px; line-height:32px; background:url(../images/btn_op_green.gif) no-repeat right -50px; padding-right:25px; color:#fff; font-size:14px; font-weight:bold; cursor:pointer}
+a.btnOp_greenH32:hover .inner {background-position:right -82px}
+
+a.btn_print, a.btn_print:hover {width:70px; height:27px; line-height:27px; background:url(../images/btn_print.gif) no-repeat left}
+
+.btnAddGH28, a.btnAddGH28, a.btnAddGH28:hover {height:28px; line-height:28px; border:none; cursor:pointer; background:url(../images/btnGrayH28.gif) repeat-x left top; padding-left:30px; text-decoration:none; font-size:12px; color:#000}
+.btnAddGH28 .inner, a.btnAddGH28 .inner, a.btnAddGH28:hover .inner {height:28px; line-height:28px; background:url(../images/btnGrayH28.gif) repeat-x right top; padding-right:12px}
+
+
+/* button- new style */
+a.btnOpH24, a.btnOpH24:hover {height:22px; line-height:22px; padding:0 14px; font-size:12px; color:#fff; text-decoration:none; cursor:pointer; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.7); -webkit-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.7); box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.7); background:url(../images/bg_btnOpH24.png) repeat-x left top}
+a.h24Blue, a.h24Blue:hover {background-position:left top; border:1px solid #4369ae; border-bottom:1px solid #234273}
+a.h24Silver, a.h24Silver:hover {color:#666; background-position:left -22px; border:1px solid #c5c5c5; border-bottom:1px solid #a5a5a5; ; -moz-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45); -webkit-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45); box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45)}
+a.h24Red, a.h24Red:hover {background-position:left -44px; border:1px solid #ab3f37; border-bottom:1px solid #7b2b25}
+a.h24Green, a.h24Green:hover {background-position:left -66px; border:1px solid #499549; border-bottom:1px solid #3c7c3d}
+a.btnOpH34, a.btnOpH34:hover {height:32px; line-height:32px; padding:0 25px; font-size:14px; color:#fff; text-decoration:none; cursor:pointer; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.7); -webkit-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.7); box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.7); background:url(../images/bg_btnOpH34.png) repeat-x left top}
+a.h34Blue, a.h34Blue:hover {background-position:left top; border:1px solid #4369ae; border-bottom:1px solid #234273}
+a.h34Silver, a.h34Silver:hover {color:#666; background-position:left -32px; border:1px solid #c5c5c5; border-bottom:1px solid #a5a5a5; -moz-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45); -webkit-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45); box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45)}
+a.h34Red, a.h34Red:hover {background-position:left -64px; border:1px solid #ab3f37; border-bottom:1px solid #7b2b25}
+a.h34Green, a.h34Green:hover {background-position:left -96px; border:1px solid #499549; border-bottom:1px solid #3c7c3d}
+
+a.btnMini, a.btnMini:hover {width:24px; height:24px; background:url(../images/bg_btnMini.gif) no-repeat left top; -moz-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45); -webkit-box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45); box-shadow:0 2px 4px -2px rgba(0, 0, 0, 0.45)}
+a.miniYes, a.miniYes:hover {background-position:left top}
+a.miniNo, a.miniNo:hover {background-position:-24px top}
+a.miniEdit, a.miniEdit:hover {background-position:-48px top}
+a.miniAdd, a.miniAdd:hover {background-position:-72px top}
+a.miniDel, a.miniDel:hover {background-position:-96px top}
+a.miniMore, a.miniMore:hover {width:22px; height:22px; padding:0;margin-left:2px}
+a.miniMore span.inner {width:22px; height:22px; background:url(../images/bg_miniMore.gif) no-repeat 7px 9px}
+
+.tableList a.btnOpH24, 
+.tableList a.btnOpH24:hover, 
+.tableListNew a.btnOpH24, 
+.tableListNew a.btnOpH24:hover{padding:0 5px}
+.tableList a.miniMore, 
+.tableList a.miniMore:hover,
+.tableListNew a.miniMore, 
+.tableListNew a.miniMore:hover{padding:0}
+
+
+/******************* 
+  background
+********************/
+.bg_none {background-image:none}
+.bg_eee {background:#EEE}
+.bg_blue {background:#D9EFFD}
+.bg_green {background:#dcffd8}
+.bg_yellow {background:#fffccf}
+
+
+/*******************
+  line & border
+********************/
+.hrGreyDot {height:1px; line-height:1px; border:0; font-size:0; background:url(../images/bg_dotGrey.gif) repeat-x top; margin:5px 0}
+.line {border-bottom:1px solid #DDD}
+.lineT {border-top:1px solid #DDD}
+.lineC {border-bottom:1px solid #CCC}
+.lineBtmBlue {border-bottom:1px solid #d5dee7}
+.bd_ddd {border:1px solid #DDD}
+.bd_ccc {border:1px solid #CCC}
+.bd_d2 {border:1px solid #D2D2D2}
+.bd_pink_2 {border:2px solid #F5C4BD}
+.bd_grey_2 {border:2px solid #DDD}
+.bd_green {border:1px solid #BFD59C}
+.bd_org {border:1px solid #ffd08e}
+.bdL_ccc {border-left:1px solid #ccc}
+.bdT_ccc {border-top:1px solid #ccc}
+.bdB_ccc {border-bottom:1px solid #ccc}
+
+
+/*******************
+  margin & paddding
+********************/
+.pd_2 {padding:2px}
+.pd_6 {padding:6px}
+.pd_8 {padding:8px}
+.pd_10 {padding:10px}
+.pd_20 {padding:20px}
+
+.pt_2 {padding-top:2px}
+.pt_5 {padding-top:5px}
+.pt_10 {padding-top:10px}
+.pt_15 {padding-top:15px}
+.pt_20 {padding-top:20px}
+
+.pr_5 {padding-right:5px;}
+.pr_10 {padding-right:10px}
+.pr_15 {padding-right:15px}
+.pr_20 {padding-right:20px}
+
+.pb_5 {padding-bottom:5px}
+.pb_10 {padding-bottom:10px}
+.pb_15 {padding-bottom:15px}
+.pb_20 {padding-bottom:20px}
+
+.pl_5 {padding-left:5px}
+.pl_10 {padding-left:10px}
+.pl_15 {padding-left:15px}
+.pl_20 {padding-left:20px}
+
+.m_0 {margin:0}
+
+.mt_2 {margin-top:2px}
+.mt_5 {margin-top:5px}
+.mt_8 {margin-top:8px}
+.mt_10 {margin-top:10px}
+.mt_15 {margin-top:15px}
+.mt_20 {margin-top:20px}
+
+.mr_0 {margin-right:0}
+.mr_3 {margin-right:3px}
+.mr_5 {margin-right:5px}
+.mr_10 {margin-right:10px}
+.mr_15 {margin-right:15px}
+.mr_20 {margin-right:20px}
+
+.mb_5 {margin-bottom:5px}
+.mb_10 {margin-bottom:10px}
+.mb_15 {margin-bottom:15px}
+.mb_20 {margin-bottom:20px}
+
+.ml_5 {margin-left:5px}
+.ml_10 {margin-left:10px}
+.ml_12 {margin-left:12px}
+.ml_24 {margin-left:24px}
+.ml_15 {margin-left:15px}
+.ml_20 {margin-left:20px}
+
+.mv_5 {margin-top:5px; margin-bottom:5px}
+.mv_10 {margin-top:10px; margin-bottom:10px}
+.mv_15 {margin-top:15px; margin-bottom:15px}
+.mv_20 {margin-top:20px; margin-bottom:20px}
+
+.mh_auto {margin-left:auto; margin-right:auto}
+.In12 {text-indent:12px}
+.In24 {text-indent:24px}
+
+
+/********************
+border-radius 
+*********************/
+.radius5 {-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px}
+.radius5T {-moz-border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0; border-radius:5px 5px 0 0}
+.radius5B {-moz-border-radius:0 0 5px 5px; -webkit-border-radius:0 0 5px 5px; border-radius:0 0 5px 5px}
+.radius5L {-moz-border-radius:5px 0 0 5px; -webkit-border-radius:5px 0 0 5px; border-radius:5px 0 0 5px}
+.radius5R {-moz-border-radius:0 5px 5px 0; -webkit-border-radius:0 5px 5px 0; border-radius:0 5px 5px 0}
+
+
+/********************
+message box wrap 
+*********************/
+.boxWrapBlue{border:1px solid #d5dee7; background:#ecf3fb; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4)}
+.boxWrapGreen {border:1px solid #AAE182; background:#D9FBC3; color:#4d9d1a; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); padding:12px 10px}
+.boxWrapYellow {border:1px solid #F2D235; background:#FBFBC3; color:#d25103; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); padding:12px 10px}
+.BlueInBlue{-moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; border:1px solid #ced7e0; background:#dce7f1}
+.boxWrapGray {}
+.boxWrapGray .boxTitle{border:1px solid #d5d5d5;border-bottom-color:#c6c6c6;height:28px;line-height:28px;background:url(../images/bg_tableListNewHead.png) repeat-x left top;padding:0 10px;-moz-border-top-left-radius:5px;-webkit-border-top-left-radius:5px;border-top-left-radius:5px;-moz-border-top-right-radius:5px;-webkit-border-top-right-radius:5px;border-top-right-radius:5px}
+.boxWrapGray .boxCon{background:#fff;padding:10px;border:1px solid #d5d5d5;border-top:none;-moz-border-bottom-left-radius:5px;-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-moz-border-bottom-right-radius:5px;-webkit-border-bottom-right-radius:5px;border-bottom-right-radius:5px}
+
+/********************
+  footer
+*********************/
+.footer {width:960px; margin:20px auto 30px auto; padding:15px 0; border-top:1px solid #CCC; color:#888; text-align:center; line-height:20px}
+.footer ul {width:400px; text-align:center; margin:0 auto}
+.footer ul li {width:199px; float:left; border-right:1px solid #DDD}
+.footer ul li.last {border:0}
+
+
+/********************
+  container
+*********************/
+.container {width:960px; margin:0 auto 20px auto}
+.location {color:#888; font-size:12px; font-family:宋体}
+.location a, .location a:hover{color:#777}
+
+.sidebarLeft {width:200px; float:left}
+.contentRight {width:745px; float:right}
+
+.sidebarRight {width:300px; float:right}
+.contentLeft {width:645px; float:left}
+
+
+/********************
+  popup layer
+*********************/
+.popLayer {width:512px; background:#FFF; color:#333; left:0; top:0; position:absolute; z-index:999; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; display:none}
+.w320 {width:320px}
+.w600 {width:600px}
+.w650 {width:650px}
+.w840 {width:840px}
+.w960 {width:960px}
+.popLayer .popTitle {padding:14px 16px}
+.popLayer .popTitle h1 {float:left; font-size:14px; font-weight:bold; color:#666}
+.popLayer .popTitle .cls {float:right}
+.popLayer .popTitle .cls a.xx {width:17px; height:17px; display:block; background:url(../images/sprites_main.gif) no-repeat -250px -200px}
+.popLayer .popTitle .cls a.xx:hover {background-position:-250px -217px}
+
+.popLayer .popCon {padding-top:12px}
+.popLayer .popCon .form {margin:15px 40px 0 40px}
+.popLayer .popCon .message {margin:50px 0; text-align:center}
+
+.popLayer .popBtn {text-align:right; background:#e0eefe; padding:10px 14px 8px 14px; -moz-border-radius:0 0 5px 5px; -webkit-border-radius:0 0 5px 5px; border-radius:0 0 5px 5px}
+
+#mask {left:0; top:0; position:absolute; z-index:997; opacity:0.2; -moz-opacity:0.2; filter:alpha(opacity=30);  background:#333; border:0}
+#ifrm {left:0; top:0; position:absolute; z-index:998; opacity:0.2; -moz-opacity:0.2; filter:alpha(opacity=30);  background:#333; border:0}
+
+.popup_tree {width:350px; background:#fff; border:1px solid #888; -moz-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); -webkit-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); position:absolute; left:0; top:0; z-index:999; display:none; overflow:hidden}
+.treeWrap {width:350px; height:285px; overflow:hidden; overflow-y:auto; position:relative}
+
+
+/********************
+  tips layer
+*********************/
+.tipsLayer {width:310px; position:absolute; left:0; top:0; z-index:999; display:none}
+.tipsLayer .tipsArrow {width:100%; height:6px; line-height:6px; font-size:0; background:transparent url(../images/bg_tipsArrow.gif) no-repeat left top; padding:0}
+.tipsLayer .tipsCon {width:280px; border:5px solid #7F7F7F; padding:5px 10px; background:#FFF} 
+.tipsLayer .tipsCon .tipsTitle {}
+.tipsLayer .tipsCon .tipsTitle h1 {float:left; font-size:12px; font-weight:bold; color:#333}
+.tipsLayer .tipsCon .tipsTitle .cls {float:right}
+.tipsLayer .tipsCon .tips {line-height:20px; margin-top:10px}
+
+.w410 {width:410px}
+.w410 .tipsArrow {width:410px}
+.w410 .tipsCon {width:400px}
+.w550 {width:550px}
+.w550 .tipsArrow {width:550px}
+.w550 .tipsCon {width:520px}
+
+
+/********************
+  V popup Layer
+*********************/
+.vPopup {background:#fff; position:absolute; z-index:9999; overflow:hidden; display:none}
+.vPopupBD {background:#333; opacity:0.4; -moz-opacity:0.4; filter:alpha(opacity=40); -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; position:absolute; z-index:9998; display:none}
+.vPopupArrow {width:12px; height:6px; background:url(../images/bg_vPopupArrow.gif) no-repeat left top; position:absolute; z-index:9999; opacity:0.55; -moz-opacity:0.55; filter:alpha(opacity=55); display:none}
+
+.vPopupList {margin:5px 0}
+.vPopupList a {height:26px; line-height:26px; width:100%; padding:0 8px; text-decoration:none; color:#666; display:block}
+.vPopupList a:hover{text-decoration:none; color:#666; background:#cbe9fb}
+
+
+/********************
+  tab
+*********************/
+.bd_5A657C_2 {border-bottom:2px solid #5A657C}
+a.TabTop {padding:5px 12px; _padding:5px 12px 3px 12px; line-height:120%;background:#949fb5; margin-right:3px; -moz-border-radius:3px 3px 0 0; -webkit-border-radius:3px 3px 0 0; border-radius:3px 3px 0 0}
+a.TabTop:hover {background:#8B94A6}
+a.currentT {padding:5px 12px; _padding:5px 12px 3px 12px; line-height:120%;background:#5a657c; font-weight:bold; color:#FFF; margin-right:3px; -moz-border-radius:3px 3px 0 0; -webkit-border-radius:3px 3px 0 0; border-radius:3px 3px 0 0} 
+.taskNum {color:#fff; padding:0 3px; margin:0; margin-left:3px}
+.bg_red {background:#D66E63}
+.bg_grey {background:#A7B3CB}
+
+.current_tag{padding-left:5px; color:#FFF; background:#5a657c url(../images/current_link.png) no-repeat 0 0; overflow:hidden; font-family:Arial,宋体}
+.current_tag .inner{padding:2px 5px 3px 0; *padding:4px 5px 2px 0; padding:4px 5px 1px 0\0; background:#5a657c url(../images/current_link.png) no-repeat right 0; overflow:hidden}
+
+.tag_blue {padding-left:10px; color:#FFF; background:url(../images/bg_tags_link.gif) no-repeat 0 -21px; overflow:hidden; font-family:Arial,宋体}
+.tag_blue .inner{padding:4px 10px 3px 0; padding:4px 10px 2px 0\0; *padding:3px 10px 3px 0; _padding:5px 10px 1px 0; background:url(../images/bg_tags_link.gif) no-repeat right -21px; overflow:hidden; font-family:宋体}
+.tag_dark {padding-left:10px; color:#FFF; background:url(../images/bg_tags_link.gif) no-repeat 0 0; overflow:hidden; font-family:Arial,宋体}
+.tag_dark .inner{padding:4px 10px 3px 0; padding:4px 10px 2px 0\0; *padding:3px 10px 3px 0; _padding:5px 10px 1px 0; background:url(../images/bg_tags_link.gif) no-repeat right 0; overflow:hidden; font-family:宋体}
+.tag_grey {padding-left:10px; color:#666; background:url(../images/bg_tags_link.gif) no-repeat 0 -42px; overflow:hidden; font-family:Arial,宋体}
+.tag_grey .inner{padding:4px 10px 3px 0; padding:4px 10px 2px 0\0; *padding:3px 10px 3px 0; _padding:5px 10px 1px 0; background:url(../images/bg_tags_link.gif) no-repeat right -42px; overflow:hidden; font-family:宋体}
+
+.logTab {border-bottom:1px solid #DDD; margin-top:50px; margin-bottom:15px}
+.logTab a{height:14px; padding:5px 12px; border:1px solid #DDD; border-bottom:0; background:#EEE; float:left; margin:0 1px}
+.logTab a.current{height:15px; background:#FFF; margin-bottom:-1px}
+.logTab a.first{margin-left:20px}
+
+
+/********************
+  form - edit
+*********************/
+.tableForm {color:#333;}
+.tableForm tr.err {background:#FCF6D4}
+.tableForm td .errMsg {background:url(../images/sprites_main.gif) no-repeat -245px -77px; *background-position:-245px -78px; padding:2px 0 0 24px; color:#CE4A3C}
+.tableForm td {padding:5px; border-top:2px solid #FFF}
+.tableForm td input {/*vertical-align:middle*/}
+.tableForm td p {padding:5px 0; margin:0}
+.tableForm td.tdTitle {text-align:right; vertical-align:top}
+.tableForm td.isReq {text-align:center; color:#CE4A3C; vertical-align:top; font-size:14px}
+.tableForm td.splite {height:5px; font-size:5px}
+.tableForm td .semiLine {border-bottom:1px solid #DDD; height:1px; width:150px; margin:2px 0 10px 100px}
+.tableForm td .semiLine2 {border-bottom:1px solid #DDD; height:1px; width:880px; margin:5px 0 0 15px}
+.tableForm td .adjustPos {margin-left:65px}
+.tableInner td {color:#888; border:0; padding:0 3px 5px 3px}
+.tableInnerDark td {border:0; padding:0 3px 5px 3px}
+
+/* table form - new style */
+.tableFormNew {width:100%; background:#ecf3fb; border:1px solid #d5dee7; border-bottom:none\0; *border-bottom:none; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; -moz-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); -webkit-box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4); box-shadow:0 1px 4px -2px rgba(0, 0, 0, 0.4)}
+.tableFormList{border-right:none}
+.tableFormList tr.trHead td{color:#666}
+.tableFormList td{border-right:1px solid #d5dee7}
+
+.tableFormNew td{border-top:1px solid #f6fbff; border-bottom:1px solid #d5dee7; padding:10px 8px; vertical-align:top}
+.tableFormNew td.tdTitle{color:#666; text-align:right}
+.tableFormNew td.request{color:#f3483e;	padding:10px 0}
+.tableFormNew td.bdR{border-right:1px solid #d5dee7}
+.tableFormNew tr:last-of-type td:first-of-type {-moz-border-radius:0 0 0 5px; -webkit-border-radius:0 0 0 5px; border-radius:0 0 0 5px}
+.tableFormNew tr:last-of-type td {border-bottom:none}
+.tableFormNew tr:last-of-type td:last-of-type {-moz-border-radius:0 0 5px 0; -webkit-border-radius:0 0 5px 0; border-radius:0 0 5px 0}
+
+.ErrMsgNew {color:#cd1f16; font-weight:bold; margin-bottom:3px}
+
+.formInForm {-moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; border:1px solid #ced7e0; border-bottom:none\0; *border-bottom:none}
+.formInForm td{border-bottom:1px solid #ced7e0; background:#dce7f1}
+
+/********************
+  list - table
+*********************/
+.tableList {border-bottom:1px solid #DDD}
+
+.tableLine {border-bottom:none}
+.tableLine td{border-bottom:1px solid #ddd; }
+.tableLine .trhead td{border:none }
+
+.tableList td {font-size:12px; color:#333; padding:9px 0 9px 3px; vertical-align:top}
+.tableList .trHead td {font-weight:bold; background:#494847 url(../images/black_bg.png) repeat-x left top; background-color:#3e3d3d\9; color:#FFF; vertical-align:middle; padding:7px 0 5px 3px}
+.tableList .noBold td {font-weight:normal}
+.tableList .trHead td:first-of-type{-moz-border-radius:3px 0 0 3px ; -webkit-border-radius:3px 0 0 3px; border-radius:3px 0 0 3px}
+.tableList .trHead td:last-of-type{-moz-border-radius:0 3px 3px 0; -webkit-border-radius:0 3px 3px 0; border-radius:0 3px 3px 0}
+.tableList .tr1 td{background:#FFF}
+.tableList .tr2 td{background:#EBF2FC}
+
+.narrow {border:1px solid #DDD; border-top:0}
+.narrow td{padding:6px; font-family:宋体}
+.narrow td.pr_10{padding-right:10px;}
+.narrow .trHead td.pl_10{padding-left:10px;}
+.narrow .trHead td{padding:4px 6px}
+.w184 {width:184px}
+.bd_none {border:none}
+
+/**********************
+table list - new style 
+***********************/
+.tableListNew {border:1px solid #ddd; border-bottom:none; border-spacing:0; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px}
+.tableListNew td{padding:12px 15px; border-bottom:1px solid #ddd; background:#fff}
+.tableListNew tr:hover td{background-color:#e7f1fe}
+.tableListNew tr.trHead td, .tableListNew tr.trHead:hover td{height:32px; line-height:32px; color:#666; background:url(../images/bg_tableListNewHead.png) repeat-x left top; padding:0 15px}
+.tableListNew tr.trHead td:first-of-type {-moz-border-radius:5px 0 0 0; -webkit-border-radius:5px 0 0 0; border-radius:5px 0 0 0}
+.tableListNew tr.trHead td:last-of-type {-moz-border-radius:0 5px 0 0; -webkit-border-radius:0 5px 0 0; border-radius:0 5px 0 0}
+.tableListNew tr:last-of-type td:first-of-type {-moz-border-radius:0 0 0 5px; -webkit-border-radius:0 0 0 5px; border-radius:0 0 0 5px}
+.tableListNew tr:last-of-type td:last-of-type {-moz-border-radius:0 0 5px 0; -webkit-border-radius:0 0 5px 0; border-radius:0 0 5px 0}
+.tableNarrow td{padding:12px 5px}
+.tableNarrow tr.trHead td, .tableNarrow tr.trHead:hover td{padding:0 5px}
+
+/* fix: table list in table form */
+.tableInForm {border:1px solid #ddd; border-bottom:none; border-top:none; border-top:1px solid #ddd\0; *border-top:1px solid #ddd}
+.tableInForm tr td{border-top:1px solid #ddd; border-top:none\0; *border-top:none}
+.tableInForm tr:last-of-type td {border-bottom:1px solid #ddd}
+
+/********************
+  turn page
+*********************/
+.pageCon {margin:34px auto 10px auto; height:20px; text-align:center; color:#888}
+.pageCon input {height:20px; padding:0 5px;  border:1px solid #DDD; color:#1769E6; background:#FFF; margin-right:5px; cursor:pointer}
+.pageCon .focus {background:#EEE}
+.pageCon .w63 {width:63px; _height:19px; _padding-top:1px; font-family:宋体}
+.pageCon .disable {color:#888; cursor:auto}
+.pageCon .current {color:#333; font-weight:bold; border:0; cursor:auto}
+.pageCon span {width: 25px; height:20px; padding:0 5px; color:#333; font-weight:bold; border:0; margin-right:5px; cursor:auto}
+
+.pageCon2 {height:20px; text-align:center; color:#888;}
+.pageCon2 a{height:14px; margin:0 0 0 4px; padding:2px 8px; padding:3px 8px 1px 8px\0; *padding:4px 8px 0 8px; _padding:3px 8px 1px 8px; border:1px solid #DDD; color:#337FC1; background:#FFF; float:left; display:block; cursor:pointer}
+.pageCon2 a.grey{color:#888; text-decoration:none; cursor:auto}
+.pageCon2 a.prev{background:url(../images/sprites_pageCon2.gif) no-repeat 5px -15px; padding-left:15px}
+.pageCon2 a.prev0{background:url(../images/sprites_pageCon2.gif) no-repeat 5px -55px; padding-left:15px}
+.pageCon2 a.min {padding-left:8px}
+.pageCon2 a.next{background:url(../images/sprites_pageCon2.gif) no-repeat right 5px; padding-right:15px}
+.pageCon2 a.next0{background:url(../images/sprites_pageCon2.gif) no-repeat right -35px; padding-right:15px} 
+.pageCon2 b{color:#333; margin:0 10px; float:left; padding-top:3px}
+
+/* turn page - new style */
+.pageNew {margin:15px 0; font-size:14px}
+.pageNew a, 
+.pageNew b{border:1px solid #d5d5d5; height:22px; line-height:22px; padding:0 7px}
+.pageNew a:hover{background-color:#eee; text-decoration:none}
+.pageNew .btn {width:22px; padding:0; background:url(../images/bg_pageNew.gif) no-repeat left top}
+.pageNew a.prev{width:22px; padding:0; background-position:left top; margin-right:5px}
+.pageNew a.next{width:22px; padding:0; background-position:-22px top}
+.pageNew span{width:22px; height:22px; line-height:22px; padding:0; background:url(../images/bg_pageNew.gif) no-repeat left top; border:1px solid #d5d5d5}
+.pageNew span.prev{background-position:left -22px; margin-right:5px; *margin-right:8px}
+.pageNew span.next{background-position:-22px -22px}
+.pageNew span.more{background-position:-5px -44px; border:none; margin-right:5px; margin-left:5px}
+.pageMini {margin:0}
+.pageMini span.shortNo{width:auto;height:22px;line-height:22px;background-image:none;border:none;margin:0 5px;color:#666}
+.pageMini span.shortNo b{background-image:none;border:none;padding:0;margin:0}
+
+/***************
+  date selector
+****************/
+.date_selector {position:absolute; z-index:100000; width:215px; display:none; padding:5px; margin:-2px 0 0; border:#bbb 1px solid; background:#F2F2F2; text-align:left; text-decoration:none}
+.date_selector_ieframe {position:absolute; z-index:99999; display:none}
+.date_selector .nav_d {width:215px; padding:0; margin:0}
+.date_selector .month_nav {float:left; padding:0; margin:0; margin-left:10px}	
+.date_selector .year_nav  {float:left; padding:0; margin:0}
+.date_selector .clearDate  {float:right; padding:0; padding-top:4px;}
+
+.date_selector .month_nav span, .date_selector .year_nav span{padding:0; margin:0 3px}
+.date_selector .month_name, .date_selector .year_name {font-weight:bold; line-height:20px}
+
+.date_selector .button {width:18px; height:18px; padding:3px; margin:0; color:#003c78; font-size:12px; text-align:center; cursor:pointer}
+
+.date_selector table {clear:both; border-collapse:collapse; border-spacing:0}
+.date_selector th {width:30px; height:20px; line-height:20px; padding:0; margin:0; text-align:center; color:black}
+.date_selector td {width:30px; height:30px; line-height:30px; border:#ccc 1px solid; padding:0; color:#003c78; text-align:center; background:white; white-space:nowrap}
+.date_selector td.today {background:#FFFEB3}
+.date_selector td.unselected_month {color: #ccc}
+.date_selector td.selectable_day {cursor:pointer}
+.date_selector td.selectable_day:hover {background:#003C78; color:white}
+.date_selector td.selected {font-weight:bold; background: #D8DFE5}
+.date_selector td.tdHover {background:#003C78; color:white}
+
+
+/**********************************
+  attach upload|quote & thumbnail
+***********************************/
+.upload_handle {width:90px; height:102px; padding:0 6px; border:1px solid #DDD; background:#FFF; text-align:center; line-height:49px; float:left; margin:0 14px 14px 10px}
+.upload_handle .inner {background:url(../images/bg_dotGrey.gif) 5px 49px repeat-x}
+.upload_handle .single {line-height:102px}
+
+.doing {width:102px; height:66px; padding:36px 0 0 0; border:1px solid #DDD; float:left; margin:0 14px 14px 10px; text-align:center}
+.doing .percent {width:100px; height:22px; margin-top:26px; border:1px solid #EEE; text-align:left}
+
+.upload_lnk {background:url(../images/sprites_main.gif) no-repeat -250px -38px; *background-position:-250px -40px; padding-left:16px}
+.quote_lnk {background:url(../images/sprites_main.gif) no-repeat -250px 4px; *background-position:-250px 2px; padding-left:20px}
+.attach_lnk {width:52px; height:18px; padding:3px 0 0 8px; _padding-top:5px; _height:16px; padding-top:5px\0; height:16px\0; background:url(../images/sprites_main.gif) no-repeat 0 -240px}
+
+.attachView, .upload_doing {position:relative; z-index:1; width:124px; height:104px; overflow:hidden; float:left; margin:0 4px 14px 0; text-align:center}
+.static {position:static}
+.tall {height:126px}
+.tall2R {height:135px}
+.fat {margin-right:20px}
+.attach_thumbnail {width:100px; height:100px; margin:0 10px; overflow:hidden; padding:1px; border:1px solid #E1E1E1; text-align:center; display:block; background:#fff}
+.attachView .limitH {height:110px; overflow-y:hidden}
+.attachView .op {position:relative; z-index:2; height:14px; background:#EEE; text-align:right; width:80px; padding:5px 10px 3px 10px; left:12px; *left:0; top:-24px}
+.attachView .detail {height:14px; padding:4px 0}
+
+
+/********************
+  flow chart
+*********************/
+.headWayTable {width:650px; color:#666; margin-bottom:20px}
+.headWayTable td {border-left:1px solid #DDD; text-align:center; padding:10px 0; line-height:18px}
+.headWayTable td.first {border:0}
+.headWayTable .trHead td {padding:10px 0; font-weight:bold; font-size:12px; background:#EEE url(../images/sprites_main.gif) no-repeat -250px -120px; border:0}
+.headWayTable .trHead td.first {background-image:none}
+.msgBox {width:496px; padding:8px 10px; background:#FCF6D4; border:1px solid #F7BD85; color:#888; line-height:20px; margin:0 auto}
+.msgBox h2 {color:#E88818; font-size:14px; line-height:120%; font-weight:bold}
+.headway {width:150px; padding:5px 0; line-height:17px}
+.arrow_step {width:9px; height:10px; margin:6px auto; background:url(../images/sprites_main.gif) no-repeat -50px -320px}
+.step_done {background:url(../images/sprites_main.gif) no-repeat -50px -280px}
+.normalFlow {background:url(../images/sprites_main.gif) no-repeat -250px -307px; *background-position:-250px -309px; padding-left:15px}
+.abnormalFlow {background:url(../images/sprites_main.gif) no-repeat -250px -337px; *background-position:-250px -339px; padding-left:15px}
+
+
+/********************
+  Approval fixedbar
+*********************/
+body {_background-attachment:fixed; _background-image:url(nothing)} 
+#fixedBar {display:none; width:100%; height:43px; position:fixed; _position:absolute; bottom:0; _top:expression(documentElement.scrollTop+document.documentElement.clientHeight-43); left:0; right:0; z-index:9} 
+#fixedFrame {left:0; position:fixed; _position:absolute; _top:expression(documentElement.scrollTop+document.documentElement.clientHeight-43); z-index:8; opacity:0; -moz-opacity:0; filter:alpha(opacity=0);  background:transparent; border:0; width:99%; height:43px;}
+.movingBox {width:100%; top:0; left:0; border-top:1px solid #ECA963; background:#FEF2C1 url(../images/bg_movingBox.gif) repeat-x left bottom; text-align:center; padding:8px 0 10px 0; color:#333; font-size:14px}
+.btnTips {height:14px; width:152px; background:url(../images/bg_btnTips.gif) no-repeat left top; color:#666; padding:1px 2px 2px 6px; padding:2px 2px 1px 6px\0; margin-left:-3px; font-size:12px}
+
+
+/********************
+  error page
+*********************/
+.page_error {width:400px; margin:80px auto 90px auto; padding:28px 0 28px 90px; font-size:18px; font-weight:bold; color:#000; background:url(../images/error_icon.gif) no-repeat left top}
+
+
+/****************************************
+  iframe mask - for ie 6 over the select
+*****************************************/
+.iframe4ie6 {position:absolute; z-index:900; top:0; left:0; border:none; background:transparent}
+
+
+/********************
+  freeze table head
+*********************/
+.fixedHead {width:100%; position:fixed; _position:absolute; top:0; _top:expression(documentElement.scrollTop); left:0; right:0; z-index:9}
+.fixedMask {width:100%; position:fixed; _position:absolute; top:0; _top:expression(documentElement.scrollTop); left:0; right:0; z-index:8; opacity:100; -moz-opacity:100; filter:alpha(opacity=100); background:transparent; border:none}
+
+
+/********************
+  autoComplate
+*********************/
+.autoComplate {position:absolute; z-index:999; width:295px; left:-999px; top:-999px; border:1px solid #777; background:#FFF; display:none}
+.autoComplate a{width:271px; padding:5px 12px; text-decoration:none; display:block}
+.autoComplate a:hover{text-decoration:none}
+.autoComplate a.current{background:#D3EBFD; text-decoration:none}
+
+
+/********************
+  tips
+*********************/
+.p_tips {position:absolute; z-index:9999; top:0; left:0; display:none; _filter:alpha(opacity=90)}
+.p_tips .tpArrow {width:11px; height:6px; overflow-y:hidden; background:url(../images/icon_tips.png) no-repeat left top; _background-image:url(../images/icon_tips.gif)}
+.p_tips .up {}
+.p_tips .down {background-position:left -7px}
+.p_tips .leftA {width:10px; height:10px; background-position:left -25px; margin-top:5px}
+.p_tips .rightA {width:10px; height:10px; background-position:left -15px; margin-top:5px}
+.p_tips .tpTxt {padding:5px 12px; font-size:12px; color:#fff; line-height:150%; background:url(../images/bg_tips.png) repeat left top; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px}
+
+
+/****************************************************
+table: has grey border, title td has grey background
+*****************************************************/
+.tableGreyBgTitle {border:1px solid #ddd; border-bottom:none}
+.tableGreyBgTitle td{padding:6px 5px; border-bottom:1px solid #ddd}
+.tableGreyBgTitle .tdTitleR{background:#eee; color:#333; text-align:right}
+.tableGreyBgTitle .tdTitleC{background:#eee; color:#333; text-align:center}
+
+/********
+guide
+*********/
+.guideRight {padding:100px 0; background:url(../images/arrow_green_right.gif) no-repeat top right; text-align:left}
+.guideLeft {padding:100px 0; background:url(../images/arrow_green_left.gif) no-repeat top left; text-align:left}
+
+/*******************
+tree
+********************/
+#frameTree {width:208px; height:500px; overflow:hidden; overflow-y:auto}
+#frameTreePop {width:300px; height:300px; overflow:hidden; overflow-y:auto}
+.TreeNode, #frameTree a, #frameTreePop a{padding:4px 5px; padding:5px 5px 3px\9; margin-top:1px}
+#frameTree a:hover, #frameTreePop a:hover {background:#5B90E0; color:#fff; font-weight:bold; padding-left:5px; padding-right:5px}
+#frameTree a.currentN, #frameTreePop a.currentN{background:#5B90E0; color:#fff; font-weight:bold; padding-left:5px; padding-right:5px}
+.TreePanel {width:1000px}
+
+.pickedDept {height:500px; overflow:hidden; overflow-y:auto}
+.pickedDept li{padding:3px 10px}
+a.listDel {width:13px; height:13px; cursor:pointer; background:url(../images/bg_remove.gif) no-repeat left top; _background-position:right 2px; text-decoration:none; padding:2px 5px; margin-left:5px}
+a.listDel:hover {background-position:left -15px; _background-position:left -13px}
+
+.selectDept {width:152px; height:19px; line-height:19px; padding:0 20px 0 8px; border:1px solid #bbb; background:url(../images/bg_selectDept.gif) no-repeat right top; cursor:pointer}
+.selectDept_pop {width:300px; background:#fff; border:1px solid #888; -moz-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); -webkit-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); position:absolute; left:0; top:0; z-index:999; display:none}
+
+
+/********************
+complaints
+*********************/
+.btn_complaintsConfirm, a.btn_complaintsConfirm, a.btn_complaintsConfirm:hover {width:78px; height:21px; background:url(../images/icons_complaints.gif) no-repeat left top; text-decoration:none}
+.btn_complaintsReject, a.btn_complaintsReject, a.btn_complaintsReject:hover {width:78px; height:21px; background:url(../images/icons_complaints.gif) no-repeat left -25px; text-decoration:none}
+.compConfirmed {background:url(../images/icons_complaints.gif) no-repeat -80px 4px; *background-position:-80px 2px; padding-left:15px}
+.compRejected {background:url(../images/icons_complaints.gif) no-repeat -80px -22px; *background-position:-80px -24px; padding-left:15px}
+
+.btn_complaints, a.btn_complaints, a.btn_complaints:hover, a.btn_comp_st2 {width:57px; height:23px; background:url(../images/icons_complaints.gif) no-repeat left -50px; text-decoration:none}
+.btn_comp_st2, a.btn_comp_st2, a.btn_comp_st2:hover {background-position:left -75px}
+
+.pop_layer_grey {width:330px; position:absolute; font-size:12px; left:0; top:30px; text-align:left}
+.pop_layer_grey .arrow{width:16px; height:9px; line-height:1px; font-size:1px; position:relative; z-index:10; background:url(../images/icons_complaints.gif) no-repeat -80px -50px}
+.pop_layer_grey .con{width:304px; position:relative; z-index:9; top:-1px; background:#eee; border:1px solid #bbb; padding:15px 13px; -moz-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); -webkit-box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3); box-shadow:0 1px 5px -2px rgba(0, 0, 0, 0.3)}
+
+/* filter box */
+.filterBox {padding:10px 10px 0 10px; margin:0}
+.filterBox b, .filterBox a, .filterBox span, .filterBox2 label{margin:0 7px}
+.filterBox p{line-height:170%}
+.filterBox2 {padding:5px 9px; background:#E9F0F8; margin-top:6px}
+
+/* absolute message box */
+.msgGreen {z-index:1; position:absolute; padding:6px 20px 6px 40px; margin:0px auto; background:#dcffd8 url(../images/treat_done.gif) no-repeat 10px 5px; height:14px; top:90px}
+
+/* fixedHelp */
+.fixedLeft {width:250px; height:28px; line-height:28px; background:url(../images/bg_fixedHelp.png) no-repeat left top; border:1px solid #bcc1ce; border-bottom:none; -moz-border-radius:3px 3px 0 0; -webkit-border-radius:3px 3px 0 0; border-radius:3px 3px 0 0; position:fixed; _position:absolute; bottom:0; right:0; margin-right:20px; padding:0}
+.fixedLeft a.helpF, .fixedLeft a.helpF:hover{width:205px; height:28px; line-height:28px; float:left; margin:0; padding:0}
+.fixedLeft a.gotoTop, .fixedLeft a.gotoTop:hover{width:45px; height:28px; line-height:28px; float:left; margin:0; padding:0}
+.fixedLeft a:focus{outline:none}
+
+@media print{
+.fixedLeft {display:none}
+}
+
+/**************
+ steps 
+ **************/
+.tableSteps {width:100%}
+.tableSteps tr td{text-align:center; padding:10px 0 25px 0}
+.tableSteps tr td.firstDoing {background:url(../images/bg_tableSteps_firstDoing.gif) no-repeat center bottom; color:#249f1c; font-weight:bold}
+.tableSteps tr td.firstDone {background:url(../images/bg_tableSteps_firstDone.gif) no-repeat center bottom; color:#34c22a}
+.tableSteps tr td.middleDoing {background:url(../images/bg_tableSteps_middleDoing.gif) no-repeat center bottom; color:#249f1c; font-weight:bold}
+.tableSteps tr td.middleDone {background:url(../images/bg_tableSteps_middleDone.gif) no-repeat center bottom; color:#34c22a}
+.tableSteps tr td.middleWill {background:url(../images/bg_tableSteps_middleWill.gif) no-repeat center bottom; color:#999}
+.tableSteps tr td.last {background:url(../images/bg_tableSteps_lastDoing.gif) no-repeat center bottom; color:#999}

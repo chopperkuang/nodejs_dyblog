@@ -1,0 +1,71 @@
+<% include categories %>
+<div class="contentRight">
+    <h2 class="mt_15 f14">文章详情</h2>
+    <div class="mv_10 grey666">
+        <input type='hidden' id="articleId" value='<%= article._id%>'/>
+        <a href="/">快速入手</a> &gt;&nbsp;&nbsp;<a href="/"><%= article.categoryName%></a> &gt;&nbsp;&nbsp;<%= title%>
+        <div class="mv_10">
+            <div class="mb_20 clearfix">
+                <h3 class="left lineH180"><a href="#" target="_blank" class="f14 bold "><%= title%></a></h3>
+                <p class="right">
+                    <a href="/articles/<%= article._id%>/edit" class="btnOpH24 h24Silver in_block ml_5">编辑</a>
+                    <a href="javascript:void(0);" class="btnOpH24 h24Silver in_block ml_5" id="del_article">删除</a></p>
+            </div>
+            <p class="grey666 lineH180 In24 f14">
+                <%= article.content%>
+            </p>
+            <div class="clearfix mt_20">
+                <div class="right grey999"><%= article.user.name%> - 编辑于 <%= formatDate(article.createdAt)%></div>
+            </div>
+        </div>
+
+        <%if(article.comments.length > 0) {%>
+            <%article.comments.forEach(function(comment){%>
+                <div class="r mt_10">
+                    <p><a href="#comments" class="bold"><%=comment.user.name%></a> <span class="grey999"><%= formatDate(comment.createdAt)%></span></p>
+                    <div class="mt_15">
+                        <p><%= comment.content%></p>
+                    </div>
+                </div>
+            <%})%>
+        <%}%>
+    </div>
+    <div class="txtRight">
+        <a href="#">全部评论>></a>
+    </div>
+
+    <div id="comments">
+        <form action="/articles/<%= article.id%>/comments" method="post" id="add_comment">
+            <div class="bg_eee pd_20 mt_20">
+                <p class="bold pd_10">回复：</p>
+                <textarea rows="10" cols="95" name="content"></textarea>
+                <p class="mt_20"><a href="###" class="btnOpH24 h24Blue in_block" id="submit_add_comment">提交</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function(){
+    $('#del_article').click(function(){
+        if(!confirm("确定删除文章？")) {
+            return false;
+        }
+        ajaxDelete({
+            url: '/articles/' + $('#articleId').val(),
+            ok: function(){
+                window.location.href = "/articles";
+            },
+            fail: function(data) {
+                alert(data.message);
+            }
+        });
+    });
+
+    $('#submit_add_comment').click(function(){
+        $('#add_comment').submit();
+        //alert("ok");
+        return false;
+    });
+});
+</script>

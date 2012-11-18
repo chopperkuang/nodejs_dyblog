@@ -1,0 +1,52 @@
+<div class="loginBox">
+    <div class="clearfix">
+        <div class="corner"></div>
+        <h1>注册</h1>
+        <div class="corner tr"></div>
+    </div>
+    <div class="con">
+        <form id="user" action="/user" method="post">
+            <table width="100%">
+                <tr>
+                    <td>用户名 <br />
+                        <input id="name" name="name" class="txt tt160" type="text" value="" maxlength="20"/>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>电子邮件 <br />
+                        <input id="email" name="email" class="txt tt160" type="text" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="clearfix">
+                            <span class="left">密码</span>
+                        </div>
+                        <input id="password" name="password" class="txt tt160" type="password" value="" maxlength="20"/>
+
+                    </td>
+                </tr>
+                <tr><td height="10"></td></tr>
+                <tr>
+                    <td>
+                        <input type="submit" id="login" value="" title="注册" class="btn_login" style="vertical-align:middle"/>
+						<span>
+							&nbsp;&nbsp;<span id="errorMsg" class="red"></span>
+							<b class="green hideit" id="loginig">正在登录中...</b>
+						</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt_10">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="clearfix">
+        <div class="corner btm bl"></div>
+        <div class="btmC">&nbsp;</div>
+        <div class="corner btm br"></div>
+    </div>
+</div>
